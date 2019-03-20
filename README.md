@@ -20,3 +20,16 @@ for {
 	time.Sleep(1 * time.Millisecond)
 }
 ```
+
+## Todo
+* Avoid a wait race condition.
+ 
+ If multiple calls come through while waiting for 
+the interval to expire then after the time expires all calls with go through at the same time
+possibly going over your hard limit. Will add a queue system that will process the the calls as they were called.
+
+Along with this a stdout warning will be added to alert with the queue is larger than one interval can hold. 
+This will help you debug if you might need a higher limit api key.
+
+
+
