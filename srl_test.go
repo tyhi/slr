@@ -17,6 +17,8 @@ func TestNewRateLimiter(t *testing.T) {
 		}
 		log.Printf("Check took %s", time.Since(start))
 
+		// do call
+
 		fmt.Println(callLimit.Calls)
 		time.Sleep(1 * time.Millisecond)
 	}

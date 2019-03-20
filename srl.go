@@ -38,6 +38,7 @@ func (rl *rateLimiter) CheckLimit() bool {
 	return false
 }
 
+// resetInterval will change the currentstamp to Now() and reset the number of calls.
 func resetInterval(rl *rateLimiter) {
 	rl.CurrentStamp = time.Now()
 	rl.Calls = 0
